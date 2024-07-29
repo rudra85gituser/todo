@@ -1,0 +1,52 @@
+<!--we are going to serve our html file form the backend-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<script>
+// now this is client side JavaScript code 
+
+function parsedResponse(data) {
+    console.log(data);
+}
+
+function callback(response) {
+    response.json().then(parsedResponse);
+}
+
+function onPress() {
+    alert("hi");
+
+    // in last tutorial we have learned about the fetch variable
+    // which helps to communicate btw servers
+    fetch("http://localhost:3000/todos", {
+        //method: "GET"
+        method:"POST",
+        body: JSON.stringify({
+            title:"gym",
+            description:"go to gym at 5"
+
+        }),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    }).then(callback);
+    // now using the fetch function our HTML code will be able to communicate the backend code running on the server
+}
+</script>
+<body>
+   Todo title 
+   <input type="text" id="todo-title"></input>
+   <br><br>
+   
+   Todo description
+   <input type="text" id="todo-description"></input>
+   <br><br>
+
+   <button onclick="onPress()">send todo</button>
+
+</body>
+</html>
