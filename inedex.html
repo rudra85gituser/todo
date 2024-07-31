@@ -8,8 +8,9 @@
 </head>
 <script>
 // now this is client side JavaScript code 
-
-function parsedResponse(data) {
+//using this block of js we write logic
+function parsedResponse(data) 
+{
     console.log(data);
 }
 
@@ -17,17 +18,22 @@ function callback(response) {
     response.json().then(parsedResponse);
 }
 
-function onPress() {
-    alert("hi");
+function onPress() 
+{
+    //creating alert while clicking
+    alert("hello");
 
+//fetching the data entere on webpage /html file and performing task using that data on backend
+    var title = document.getElementById("title").value;
+    var description = document.getElementById("description").value;
     // in last tutorial we have learned about the fetch variable
     // which helps to communicate btw servers
     fetch("http://localhost:3000/todos", {
         //method: "GET"
         method:"POST",
         body: JSON.stringify({
-            title:"gym",
-            description:"go to gym at 5"
+            title:"title",
+            description:"description"
 
         }),
         headers:{
@@ -39,11 +45,11 @@ function onPress() {
 </script>
 <body>
    Todo title 
-   <input type="text" id="todo-title"></input>
+   <input type="text" id="title"></input>
    <br><br>
    
    Todo description
-   <input type="text" id="todo-description"></input>
+   <input type="text" id="description"></input>
    <br><br>
 
    <button onclick="onPress()">send todo</button>
