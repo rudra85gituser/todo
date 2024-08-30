@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './App.css'
 
-/*
+/*this is a state(the elements/data in ui which can be changed)
 let todo = {
   title: "go to the gym",
   description: "go at 5pm",
@@ -14,6 +14,9 @@ let todo = {
 //but then react get confused which state it have to update , remove , add ,delete
 //so we have to define the data/input data/values in a specific way
 
+
+
+//this is a state(the elements in ui which can be changed)
 function App()
 {
 const [todo , setTodo] = useState({
@@ -24,6 +27,7 @@ const [todo , setTodo] = useState({
 
 
 setInterval(()=>{
+  //this is a state(the elements in ui which can be changed)
   //we havev to call set todo function whenever we are doing changes in the todo
   setTodo({
     title: " not go to the gym",
@@ -32,21 +36,31 @@ setInterval(()=>{
   })
 },2000);
 
+
+//this is a component
   return(
-  <>
+  <div>
   <h3>hi there this is my first react code</h3>
   {todo.title}
   {todo.description}
   {todo.id}
-  </>
+  <PersonName firstName={"rudra"} lastName={"yadav"}></PersonName>
+  </div>
   )
+
+
+
+
+//new component
+function PersonName(props)
+{
+  return 
+  <div>
+  {props.firstName} {props.lastName}
+  </div>
+}
 }
 export default App
-
-
-
-
-
 
 
 
