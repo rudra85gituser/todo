@@ -31,10 +31,10 @@ setInterval(()=>{
   //we havev to call set todo function whenever we are doing changes in the todo
   setTodo({
     title: " not go to the gym",
-    description: "go to eat 5pm",
+    description: "not go at 5pm",
     id:1
   })
-},2000);
+},1000);
 
 
 //this is a component

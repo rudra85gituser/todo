@@ -103,6 +103,7 @@ let newArr3 = arr.map(callback)
 console.log(newArr3);
 
 
+//when we have to pass list of elements and data to render or to display then we use array and maps
 //example 2
 // manipulating values using array and maps
 
